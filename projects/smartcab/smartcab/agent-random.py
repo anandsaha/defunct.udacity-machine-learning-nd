@@ -152,8 +152,7 @@ class LearningAgent(Agent):
         ###########
         # When learning, implement the value iteration update rule
         #   Use only the learning rate 'alpha' (do not use the discount factor 'gamma')
-        if self.learning:
-            self.Q[state][action] += self.alpha * (reward - self.Q[state][action])
+        self.Q[state][action] += self.alpha * (reward - self.Q[state][action])
         return
 
 
@@ -189,7 +188,7 @@ def run():
     #   learning   - set to True to force the driving agent to use Q-learning
     #    * epsilon - continuous value for the exploration factor, default is 1
     #    * alpha   - continuous value for the learning rate, default is 0.5
-    agent = env.create_agent(LearningAgent, learning=True, epsilon=1.0, epsilon_decay_rate=0.001, alpha=0.6)
+    agent = env.create_agent(LearningAgent, learning=False, epsilon=1.0, epsilon_decay_rate=0.001, alpha=0.6)
     
     ##############
     # Follow the driving agent
@@ -211,7 +210,7 @@ def run():
     # Flags:
     #   tolerance  - epsilon tolerance before beginning testing, default is 0.05 
     #   n_test     - discrete number of testing trials to perform, default is 0
-    sim.run(n_test=20, tolerance=0.05)
+    sim.run(n_test=10, tolerance=0.05)
 
 
 if __name__ == '__main__':

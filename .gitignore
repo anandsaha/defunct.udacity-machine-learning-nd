@@ -64,7 +64,6 @@ target/
 #Ipython Notebook
 .ipynb_checkpoints
 #Large files
-./practice_projects/cnn/cifar10-classification/MLP.weights.best.hdf5
 ./dog-project/bottleneck_features/DogVGG16Data.npz
 ./dog-project/saved_models/weights.best.from_scratch.hdf5
 ./dog-project/lfw/DogVGG16Data.npz
